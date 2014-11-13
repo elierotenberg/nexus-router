@@ -1,6 +1,5 @@
-My default npm starterkit.
-Includes:
-- Sane file structure,
-- Sane `package.json`/`bower.json`,
-- ES6-to-ES5 transpiling/polyfilling (`Promise` with `bluebird`),
-- Common libs (`lodash-next`, `co`, `should`).
+Nexus Router
+============
+
+Ultra tiny minimalist isomorphic 'router'.
+More like an associative collection which maps string patterns to values.
