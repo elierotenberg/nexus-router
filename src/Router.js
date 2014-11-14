@@ -29,7 +29,10 @@ function extractFragmentParameters(regexp, fragment) {
 }
 
 class Router {
-  constructor() {
+  constructor(routes = {}) {
+    _.dev(() => routes.should.be.an.Object &&
+      Object.keys(routes).map((pattern) => pattern.should.be.a.String && routes[pattern].should.be.a.Function)
+    );
     this._routes = {};
   }
 
@@ -53,7 +56,7 @@ class Router {
     if(!patterns) {
       return this._routes;
     }
-    object.keys(pattern).forEach((pattern) => this.route(pattern, patterns[pattern]));
+    Object.keys(pattern).forEach((pattern) => this.route(pattern, patterns[pattern]));
     return this;
   }
 
@@ -66,7 +69,7 @@ class Router {
 
   match(fragment) {
     let res = null;
-    object.keys(this._routes, (pattern) => {
+    Object.keys(this._routes, (pattern) => {
       let { regexp, fn } = this._routes[pattern];
       if(res !== null) {
         return;
