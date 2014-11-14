@@ -87,4 +87,8 @@ class Router {
   }
 }
 
+const ConstantRouter = require('./ConstantRouter')(Router);
+
+_.extend(Router, { ConstantRouter });
+
 module.exports = Router;
