@@ -1,6 +1,4 @@
 const _ = require('lodash-next');
-const should = _.should;
-
 
 const optionalParam = /\((.*?)\)/g;
 const namedParam = /(\(\?)?:\w+/g;
@@ -56,7 +54,7 @@ class Router {
     if(!patterns) {
       return this._routes;
     }
-    Object.keys(pattern).forEach((pattern) => this.route(pattern, patterns[pattern]));
+    Object.keys(patterns).forEach((pattern) => this.route(pattern, patterns[pattern]));
     return this;
   }
 
