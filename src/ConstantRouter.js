@@ -1,5 +1,5 @@
 module.exports = function(Router) {
-  const _ = require('lodasht-next');
+  const _ = require('lodash-next');
 
   class ConstantRouter extends Router {
     // Simplified Router which maps pattern to flat values.
