@@ -63,6 +63,7 @@ class Router {
       return this._default;
     }
     this._default = fn;
+    return this;
   }
 
   match(fragment) {
