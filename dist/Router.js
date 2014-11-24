@@ -55,12 +55,12 @@ var Router = (function () {
         var _this2 = this;
         if (!fn) {
           _.dev(function () {
-            return _this2._routes.should.have.property(pattern);
+            return (_this2._routes[pattern] !== void 0).should.be.ok;
           });
           return this._routes[pattern];
         }
         _.dev(function () {
-          return _this2._routes.should.not.have.property(pattern) && fn.should.be.a.Function;
+          return (_this2._routes[pattern] === void 0).should.be.ok && fn.should.be.a.Function;
         });
         if (pattern === null) {
           return this["default"](fn);

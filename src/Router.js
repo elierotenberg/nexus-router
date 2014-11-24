@@ -36,10 +36,10 @@ class Router {
 
   route(pattern, fn) {
     if(!fn) {
-      _.dev(() => this._routes.should.have.property(pattern));
+      _.dev(() => (this._routes[pattern] !== void 0).should.be.ok);
       return this._routes[pattern];
     }
-    _.dev(() => this._routes.should.not.have.property(pattern) &&
+    _.dev(() => (this._routes[pattern] === void 0).should.be.ok &&
       fn.should.be.a.Function
     );
     if(pattern === null) {
