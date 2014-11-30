@@ -45,6 +45,9 @@ var Router = (function () {
         });
       });
       _this._routes = {};
+      Object.keys(routes).forEach(function (pattern) {
+        return _this.route(pattern, routes[pattern]);
+      });
     })();
   };
 

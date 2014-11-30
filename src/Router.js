@@ -32,6 +32,7 @@ class Router {
       Object.keys(routes).map((pattern) => pattern.should.be.a.String && routes[pattern].should.be.a.Function)
     );
     this._routes = {};
+    Object.keys(routes).forEach((pattern) => this.route(pattern, routes[pattern]));
   }
 
   route(pattern, fn) {
