@@ -101,7 +101,7 @@ var Router = (function () {
       value: function (fragment) {
         var _this4 = this;
         var res = null;
-        Object.keys(this._routes, function (pattern) {
+        Object.keys(this._routes).forEach(function (pattern) {
           var regexp = _this4._routes[pattern].regexp;
           var fn = _this4._routes[pattern].fn;
           if (res !== null) {

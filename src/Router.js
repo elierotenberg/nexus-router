@@ -69,7 +69,7 @@ class Router {
 
   match(fragment) {
     let res = null;
-    Object.keys(this._routes, (pattern) => {
+    Object.keys(this._routes).forEach((pattern) => {
       let { regexp, fn } = this._routes[pattern];
       if(res !== null) {
         return;
