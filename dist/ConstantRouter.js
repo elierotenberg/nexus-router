@@ -15,10 +15,10 @@ var _extends = function (child, parent) {
 require("6to5/polyfill");var Promise = (global || window).Promise = require("lodash-next").Promise;var __DEV__ = (process.env.NODE_ENV !== "production");var __PROD__ = !__DEV__;var __BROWSER__ = (typeof window === "object");var __NODE__ = !__BROWSER__;module.exports = function (Router) {
   var _ = require("lodash-next");
 
-  var _ConstantRouter = (function (Router) {
-    var _ConstantRouter =
+  var ConstantRouter = (function (Router) {
+    var ConstantRouter =
     // Simplified Router which maps pattern to flat values.
-    function _ConstantRouter(map) {
+    function ConstantRouter(map) {
       _.dev(function () {
         return map.should.be.an.Object && Object.keys(map).map(function (pattern) {
           return pattern.should.be.a.String;
@@ -32,10 +32,10 @@ require("6to5/polyfill");var Promise = (global || window).Promise = require("lod
       Router.call(this, routes);
     };
 
-    _extends(_ConstantRouter, Router);
+    _extends(ConstantRouter, Router);
 
-    return _ConstantRouter;
+    return ConstantRouter;
   })(Router);
 
-  return _ConstantRouter;
+  return ConstantRouter;
 };
